@@ -27,6 +27,13 @@ Por decisão do Will (2026-10-05), a LP não mostra preço de nenhum produto. Os
 - As imagens são geradas por IA a partir de foto real; `hero.png` tem texto gravado com erros ("Leandro Marikota", "Programa de Autoridade"). Trocar pela sessão real.
 - Sem Google Tag, pixel ou domínio. Publicar na Vercel no domínio do Leandro quando ele registrar.
 
+## Prévia no ar (GitHub Pages)
+
+Esta pasta é um repositório próprio, público, só com a LP: https://github.com/willianwiab/donos-de-pizzaria-lp
+Página: https://willianwiab.github.io/donos-de-pizzaria-lp/
+
+Para atualizar: editar `index.html`, depois `git add -A && git commit -m "..." && git push`. O Pages republica em 1 a 2 minutos. Nunca colocar neste repositório nada das outras pastas do projeto (números, contrato, cartas de negociação): ele é público.
+
 ## Publicar
 
 Quando aprovada: Vercel, projeto novo na conta do projeto (não na da WEN), domínio em nome do Leandro, UTM nas campanhas, formulário apontando para o CRM.
