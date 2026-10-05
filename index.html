@@ -48,18 +48,25 @@
   @media(max-width:860px){nav ul{display:none}}
 
   /* hero */
-  .hero{position:relative;overflow:hidden;padding:0;min-height:600px;display:flex;align-items:center}
-  .hero img.bg{position:absolute;right:0;top:0;height:100%;width:auto;max-width:none;opacity:.95}
-  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,18,18,1) 0%,rgba(18,18,18,.92) 34%,rgba(18,18,18,.35) 50%,rgba(18,18,18,0) 62%)}
-  .hero .wrap{position:relative;z-index:1;padding-top:96px;padding-bottom:96px;max-width:none;width:100%;min-width:0;margin:0;padding-left:6vw}
-  .hero .inner{max-width:470px}
+  .hero{display:grid;grid-template-columns:minmax(0,46%) minmax(0,54%);min-height:600px;background:var(--bg)}
+  .hero .copy{display:flex;align-items:center;padding:72px 32px 72px 6vw}
+  .hero .inner{max-width:480px}
   .hero h1{margin:14px 0 18px}
   .hero p.lead{font-size:16px;color:var(--text);max-width:440px}
   .hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
   .hero .proof{display:flex;gap:22px;flex-wrap:wrap;margin-top:34px}
   .hero .proof b{display:block;font-size:22px;color:var(--yellow)}
   .hero .proof span{font-size:12px;color:var(--muted)}
-  @media(max-width:860px){.hero{min-height:0}.hero img.bg{right:auto;left:0;width:100%;height:100%;object-fit:cover;object-position:78% 40%}.hero .wrap{padding-left:24px}.hero::after{background:linear-gradient(180deg,rgba(18,18,18,.55),rgba(18,18,18,.96) 70%)}}
+  .hero .media{position:relative;min-height:600px;overflow:hidden}
+  .hero .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 35%}
+  .hero .media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0%,rgba(18,18,18,0) 22%)}
+  @media(max-width:860px){
+    .hero{grid-template-columns:1fr;min-height:0}
+    .hero .media{order:-1;min-height:0;height:380px}
+    .hero .media img{object-position:62% 25%}
+    .hero .media::after{background:linear-gradient(180deg,rgba(18,18,18,0) 60%,var(--bg) 100%)}
+    .hero .copy{padding:8px 24px 56px}
+  }
 
   /* steps */
   .steps{grid-template-columns:repeat(5,1fr)}
@@ -149,8 +156,7 @@
 </nav>
 
 <header class="hero">
-  <img class="bg" src="img/leandro-pizza.png" alt="Leandro Belini, fundador da Marikota, segurando a pizza Borda Vulcão">
-  <div class="wrap">
+  <div class="copy">
     <div class="inner">
       <span class="eyebrow">Donos de Pizzaria</span>
       <h1>De dono de pizzaria a referência do setor</h1>
@@ -166,6 +172,9 @@
         <div><b>Santos</b><span>a caminho</span></div>
       </div>
     </div>
+  </div>
+  <div class="media">
+    <img src="img/leandro-pizza.png" alt="Leandro Belini, fundador da Marikota, segurando a pizza Borda Vulcão">
   </div>
 </header>
 
