@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Donos de Pizzaria — com Leandro Belini, fundador da Marikota</title>
+<meta name="description" content="Como abrir e escalar uma pizzaria lucrativa, com quem fez isso três vezes em quatro anos. Aula gratuita, podcast, curso e mentoria com Leandro Belini.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#121212; --card:#262626; --line:#3A3A3A; --yellow:#F2B705; --yellow-d:#C9980A;
+    --text:#FFFFFF; --muted:#B5B0A6; --max:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .eyebrow{color:var(--yellow);font-weight:800;letter-spacing:.22em;text-transform:uppercase;font-size:12px}
+  h1,h2,h3{margin:0;line-height:1.1;font-weight:800;letter-spacing:-.01em}
+  h1{font-size:clamp(30px,4.2vw,48px)}
+  h2{font-size:clamp(26px,3.6vw,40px)}
+  h3{font-size:20px}
+  p{margin:0}
+  .muted{color:var(--muted)}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--yellow);color:#121212;font-weight:800;padding:16px 26px;border-radius:12px;text-decoration:none;border:0;cursor:pointer;font-size:16px;transition:background .15s}
+  .btn:hover{background:var(--yellow-d)}
+  .btn.ghost{background:transparent;color:var(--text);border:1.5px solid var(--line)}
+  .btn.ghost:hover{border-color:var(--yellow);color:var(--yellow)}
+  section{padding:88px 0}
+  .grid{display:grid;gap:20px}
+  .card{background:var(--card);border-radius:16px;padding:28px}
+  .card.yellow{background:var(--yellow);color:#121212}
+  .card.yellow .muted{color:#3a3a3a}
+  .chip{display:inline-block;background:var(--line);color:var(--yellow);font-weight:600;font-size:12px;padding:6px 10px;border-radius:999px;letter-spacing:.08em;text-transform:uppercase}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:10;background:rgba(18,18,18,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:14px}
+  .brand small{display:block;font-weight:400;letter-spacing:0;text-transform:none;color:var(--muted);font-size:12px}
+  nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+  nav ul a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:600}
+  nav ul a:hover{color:var(--yellow)}
+  @media(max-width:860px){nav ul{display:none}}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;padding:0;min-height:600px;display:flex;align-items:center}
+  .hero img.bg{position:absolute;right:0;top:0;height:100%;width:auto;max-width:none;opacity:.95}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,18,18,1) 0%,rgba(18,18,18,.92) 34%,rgba(18,18,18,.35) 50%,rgba(18,18,18,0) 62%)}
+  .hero .wrap{position:relative;z-index:1;padding-top:96px;padding-bottom:96px;max-width:none;width:100%;min-width:0;margin:0;padding-left:6vw}
+  .hero .inner{max-width:470px}
+  .hero h1{margin:14px 0 18px}
+  .hero p.lead{font-size:16px;color:var(--text);max-width:440px}
+  .hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+  .hero .proof{display:flex;gap:22px;flex-wrap:wrap;margin-top:34px}
+  .hero .proof b{display:block;font-size:22px;color:var(--yellow)}
+  .hero .proof span{font-size:12px;color:var(--muted)}
+  @media(max-width:860px){.hero{min-height:0}.hero img.bg{right:auto;left:0;width:100%;height:100%;object-fit:cover;object-position:78% 40%}.hero .wrap{padding-left:24px}.hero::after{background:linear-gradient(180deg,rgba(18,18,18,.55),rgba(18,18,18,.96) 70%)}}
+
+  /* steps */
+  .steps{grid-template-columns:repeat(5,1fr)}
+  .step{background:var(--card);border-radius:16px;padding:26px 22px;text-align:center}
+  .step .n{width:54px;height:54px;border-radius:50%;background:var(--yellow);color:#121212;font-weight:800;display:grid;place-items:center;margin:0 auto 16px;font-size:20px}
+  .step .price{color:var(--yellow);font-weight:800;font-size:18px}
+  .step h3{font-size:17px;margin:6px 0 10px}
+  .step p{font-size:14px;color:var(--muted)}
+  .step.top{background:var(--yellow);color:#121212}
+  .step.top .n{background:#121212;color:var(--yellow)}
+  .step.top .price{color:#121212}
+  .step.top p{color:#3a3a3a}
+  @media(max-width:1000px){.steps{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.steps{grid-template-columns:1fr}}
+
+  /* split */
+  .split{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+  .split img{border-radius:20px}
+  @media(max-width:860px){.split{grid-template-columns:1fr}}
+  ul.check{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px}
+  ul.check li{padding-left:32px;position:relative;color:var(--text)}
+  ul.check li::before{content:"";position:absolute;left:0;top:4px;width:20px;height:20px;border-radius:50%;background:var(--yellow)}
+  ul.check li::after{content:"";position:absolute;left:7px;top:8px;width:5px;height:9px;border:solid #121212;border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+
+  /* modules */
+  .mods{grid-template-columns:repeat(3,1fr)}
+  .mod{background:var(--card);border-radius:16px;padding:24px;display:flex;gap:16px}
+  .mod .n{flex:0 0 40px;height:40px;border-radius:50%;background:var(--yellow);color:#121212;font-weight:800;display:grid;place-items:center}
+  .mod h3{font-size:17px;margin-bottom:6px}
+  .mod p{font-size:14px;color:var(--muted)}
+  @media(max-width:900px){.mods{grid-template-columns:1fr}}
+
+  /* form */
+  .form-sec{background:var(--yellow);color:#121212}
+  .form-sec h2,.form-sec .eyebrow{color:#121212}
+  .form-sec .muted{color:#3a3a3a}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  @media(max-width:860px){.form-grid{grid-template-columns:1fr}}
+  form{background:#121212;color:var(--text);padding:30px;border-radius:20px;display:grid;gap:14px}
+  label{font-size:13px;font-weight:600;color:var(--muted)}
+  input,select{width:100%;padding:14px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--text);font:inherit;font-size:15px}
+  input:focus,select:focus{outline:none;border-color:var(--yellow)}
+  form .btn{width:100%;justify-content:center;margin-top:6px}
+  form small{color:var(--muted);font-size:12px}
+  .ok{display:none;background:var(--card);padding:18px;border-radius:12px;color:var(--yellow);font-weight:600}
+
+  /* podcast */
+  .pod{grid-template-columns:repeat(4,1fr)}
+  .ep{background:var(--card);border-radius:16px;overflow:hidden}
+  .ep .thumb{aspect-ratio:16/9;background:linear-gradient(135deg,#1c1c1c,#2f2f2f);display:grid;place-items:center;color:var(--yellow);font-weight:800;font-size:13px;letter-spacing:.1em}
+  .ep div.b{padding:16px}
+  .ep h3{font-size:15px;margin-bottom:6px}
+  .ep p{font-size:13px;color:var(--muted)}
+  @media(max-width:900px){.pod{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.pod{grid-template-columns:1fr}}
+
+  /* faq */
+  details{background:var(--card);border-radius:12px;padding:18px 22px;margin-bottom:10px}
+  summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  summary::after{content:"+";color:var(--yellow);font-size:22px;font-weight:800}
+  details[open] summary::after{content:"–"}
+  details p{margin-top:12px;color:var(--muted);font-size:15px}
+
+  footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-size:13px}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  .wa{position:fixed;right:20px;bottom:20px;z-index:20;background:#25D366;color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.4);text-decoration:none}
+  .wa svg{width:30px;height:30px;fill:#fff}
+  .sec-head{max-width:720px;margin-bottom:40px}
+  .sec-head h2{margin-top:12px}
+  .sec-head p{margin-top:14px;color:var(--muted);font-size:17px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Donos de Pizzaria<small>por Leandro Belini</small></div>
+    <ul>
+      <li><a href="#metodo">Método</a></li>
+      <li><a href="#curso">Curso</a></li>
+      <li><a href="#podcast">Podcast</a></li>
+      <li><a href="#mentoria">Mentoria</a></li>
+      <li><a href="#aula" class="btn" style="padding:10px 18px;font-size:14px">Aula gratuita</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <img class="bg" src="img/leandro-pizza.png" alt="Leandro Belini, fundador da Marikota, segurando a pizza Borda Vulcão">
+  <div class="wrap">
+    <div class="inner">
+      <span class="eyebrow">Donos de Pizzaria</span>
+      <h1>De dono de pizzaria a referência do setor</h1>
+      <p class="lead">Como abrir e escalar uma pizzaria lucrativa, com quem fez isso três vezes em quatro anos. Leandro Belini, fundador da Marikota, abre a conta: ponto, CMV, rodízio, equipe, delivery e segunda unidade.</p>
+      <div class="cta">
+        <a class="btn" href="#aula">Quero a aula gratuita</a>
+        <a class="btn ghost" href="#podcast">Ouvir o podcast</a>
+      </div>
+      <div class="proof">
+        <div><b>3</b><span>unidades no ABC paulista</span></div>
+        <div><b>4 anos</b><span>de uma casa para uma rede</span></div>
+        <div><b>4,7</b><span>nota no Google</span></div>
+        <div><b>Santos</b><span>a caminho</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="metodo">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">O método</span>
+      <h2>Cinco degraus, do gratuito ao privado</h2>
+      <p>Cada degrau prepara o próximo: quem ouve o podcast vai à aula, quem vai à aula faz o curso, quem faz o curso pede a mentoria.</p>
+    </div>
+    <div class="grid steps">
+      <div class="step"><div class="n">1</div><div class="price">Comece aqui</div><h3>Autoridade</h3><p>Podcast semanal, aula online mensal e bastidores no Instagram.</p></div>
+      <div class="step"><div class="n">2</div><div class="price">Uma noite</div><h3>Aula presencial</h3><p>15 donos de pizzaria, uma noite com o Leandro, networking, pizza e bebida.</p></div>
+      <div class="step"><div class="n">3</div><div class="price">6 módulos</div><h3>Curso online</h3><p>6 módulos gravados e uma live fechada por mês, acesso por 12 meses.</p></div>
+      <div class="step"><div class="n">4</div><div class="price">Mensal</div><h3>Assessoria por vídeo</h3><p>2 chamadas individuais por mês e WhatsApp, para quem está longe.</p></div>
+      <div class="step top"><div class="n">5</div><div class="price">10 vagas</div><h3>Mentoria privada</h3><p>4 chamadas individuais, WhatsApp e visita presencial na sua pizzaria. 10 vagas.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="leandro" style="padding-top:0">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <span class="eyebrow">Quem ensina</span>
+        <h2 style="margin-top:12px">Leandro Belini, fundador da Marikota</h2>
+        <p class="muted" style="margin-top:14px;font-size:17px">Em quatro anos, a Marikota saiu de uma casa em São Bernardo para três unidades no ABC paulista, com app próprio, programa de fidelidade e um produto que a região inteira conhece: a pizza Borda Vulcão de Sorvete. A quarta unidade, em Santos, está a caminho.</p>
+        <ul class="check">
+          <li>Baeta Neves, Clube MESC e São Caetano do Sul, todas abertas e visitáveis</li>
+          <li>Rodízio, à la carte e delivery próprio, com a conta aberta para o aluno</li>
+          <li>Os erros que quase fecharam a primeira casa, contados em primeira pessoa</li>
+          <li>Nenhuma promessa de enriquecer. Promessa de lucro e organização</li>
+        </ul>
+      </div>
+      <img src="img/hero.png" alt="Leandro Belini na frente da fachada da Marikota">
+    </div>
+  </div>
+</section>
+
+<section id="curso" style="background:var(--card)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Curso online</span>
+      <h2>Seis módulos para abrir, organizar e crescer</h2>
+      <p>Gravados em estúdio, com planilhas e modelos para baixar. Uma live fechada por mês para tirar dúvidas com o Leandro.</p>
+    </div>
+    <div class="grid mods">
+      <div class="mod" style="background:#121212"><div class="n">1</div><div><h3>O ponto certo</h3><p>E o erro que fecha pizzaria no primeiro ano. Checklist de ponto e planilha de ponto de equilíbrio.</p></div></div>
+      <div class="mod" style="background:#121212"><div class="n">2</div><div><h3>Cardápio, ficha técnica e CMV</h3><p>Onde o lucro se esconde. A ficha técnica de cada pizza e o número que o dono precisa saber de cor.</p></div></div>
+      <div class="mod" style="background:#121212"><div class="n">3</div><div><h3>Rodízio que dá lucro</h3><p>Giro, desperdício e ritmo de salão. A conta que ninguém faz antes de abrir o rodízio.</p></div></div>
+      <div class="mod" style="background:#121212"><div class="n">4</div><div><h3>Equipe</h3><p>Contratar, treinar e segurar gente boa. Para a pizzaria funcionar sem o dono no forno.</p></div></div>
+      <div class="mod" style="background:#121212"><div class="n">5</div><div><h3>Delivery, iFood e app próprio</h3><p>A margem real de cada canal e como trazer o cliente para o canal próprio.</p></div></div>
+      <div class="mod" style="background:#121212"><div class="n">6</div><div><h3>Da primeira para a segunda unidade</h3><p>Quando é hora, o que padronizar antes e como não quebrar a primeira no caminho.</p></div></div>
+    </div>
+    <div style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+      <a class="btn" href="#aula">Entrar na lista do lançamento</a>
+      <span class="muted">Abertura das vagas na aula online de lançamento. Inscritos recebem condição especial por 72 horas.</span>
+    </div>
+  </div>
+</section>
+
+<section id="podcast">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Podcast · toda semana no YouTube</span>
+      <h2>Donos de pizzaria falando de número, não de sonho</h2>
+      <p>Donos, fornecedores, contadores e gente de delivery contando o que funciona de verdade. Gravado no estúdio da WEN, em São Paulo.</p>
+    </div>
+    <div class="grid pod">
+      <div class="ep"><div class="thumb">EPISÓDIO 1</div><div class="b"><h3>O erro que quase fechou a primeira Marikota</h3><p>Leandro Belini abre a história.</p></div></div>
+      <div class="ep"><div class="thumb">EPISÓDIO 2</div><div class="b"><h3>CMV: a conta que todo dono deveria fazer na segunda-feira</h3><p>Com um dono de pizzaria do ABC.</p></div></div>
+      <div class="ep"><div class="thumb">EPISÓDIO 3</div><div class="b"><h3>Queijo, farinha e margem</h3><p>Com um fornecedor da cadeia da pizza.</p></div></div>
+      <div class="ep"><div class="thumb">EPISÓDIO 4</div><div class="b"><h3>iFood: parceiro ou concorrente?</h3><p>Com quem vive de delivery.</p></div></div>
+    </div>
+    <div style="margin-top:28px"><a class="btn ghost" href="#">Ver todos os episódios no YouTube</a></div>
+  </div>
+</section>
+
+<section id="mentoria" style="background:var(--card)">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <span class="eyebrow">Mentoria privada · 10 vagas</span>
+        <h2 style="margin-top:12px">O Leandro dentro da sua pizzaria</h2>
+        <p class="muted" style="margin-top:14px;font-size:17px">Para quem já tem pizzaria e quer lucro de verdade ou a segunda unidade. Quatro chamadas individuais por mês, WhatsApp em horário comercial e uma visita presencial a cada trimestre.</p>
+        <ul class="check">
+          <li>Diagnóstico da sua operação: números, cardápio, equipe, salão e delivery</li>
+          <li>Plano de 90 dias com metas, cortes e rotinas</li>
+          <li>Painel simples para acompanhar toda semana</li>
+          <li>Dez vagas por vez, com contrato mínimo de 3 meses</li>
+        </ul>
+        <div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap">
+          <a class="btn" href="https://wa.me/5511999999999?text=Quero%20saber%20mais%20sobre%20a%20mentoria%20privada%20Donos%20de%20Pizzaria">Falar sobre a mentoria</a>
+          <a class="btn ghost" href="#aula">Começar pela aula gratuita</a>
+        </div>
+      </div>
+      <div class="grid" style="gap:16px">
+        <div class="card yellow"><h3>Aula presencial</h3><p class="muted" style="margin-top:8px">Uma noite com 15 donos de pizzaria no Studio B da WEN: aula, dúvidas ao vivo, networking, pizza e bebida. Uma edição a cada 2 meses.</p></div>
+        <div class="card"><h3>Assessoria por vídeo</h3><p class="muted" style="margin-top:8px">Para quem está fora do ABC e de São Paulo. Duas chamadas individuais por mês e WhatsApp.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="aula" class="form-sec">
+  <div class="wrap">
+    <div class="form-grid">
+      <div>
+        <span class="eyebrow">Aula online gratuita</span>
+        <h2 style="margin-top:12px">Os 5 erros que fecham pizzaria no primeiro ano</h2>
+        <p class="muted" style="margin-top:14px;font-size:17px">Ao vivo, com o Leandro, 40 minutos. Você sai com o checklist de ponto e a planilha de ponto de equilíbrio. Inscrição pelo WhatsApp.</p>
+        <p style="margin-top:18px;font-weight:800">Próxima aula: <span id="data-aula">data a definir</span></p>
+      </div>
+      <form id="form-aula" onsubmit="return enviar(event)">
+        <div><label for="nome">Seu nome</label><input id="nome" name="nome" required placeholder="Nome e sobrenome"></div>
+        <div><label for="whats">WhatsApp</label><input id="whats" name="whatsapp" required placeholder="(11) 9 9999-9999" inputmode="tel"></div>
+        <div><label for="cidade">Cidade</label><input id="cidade" name="cidade" placeholder="Santo André, SP"></div>
+        <div><label for="fase">Sua pizzaria hoje</label>
+          <select id="fase" name="fase">
+            <option>Ainda vou abrir</option>
+            <option>Tenho 1 unidade</option>
+            <option>Tenho 2 ou mais</option>
+          </select></div>
+        <button class="btn" type="submit">Quero minha vaga na aula</button>
+        <small>Sem spam. Você recebe o link da aula e o material pelo WhatsApp.</small>
+        <div class="ok" id="ok">Inscrição recebida. O link chega no seu WhatsApp.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:72px">
+  <div class="wrap" style="max-width:800px">
+    <div class="sec-head"><span class="eyebrow">Perguntas</span><h2>O que as pessoas perguntam antes de entrar</h2></div>
+    <details><summary>Ainda não tenho pizzaria. Serve para mim?</summary><p>Serve. O módulo 1 do curso é sobre o ponto e o capital antes de abrir, e a aula gratuita começa pelos erros do primeiro ano.</p></details>
+    <details><summary>Minha pizzaria é fora do ABC. Como funciona?</summary><p>O curso e a assessoria por vídeo são 100% online. A mentoria privada tem visita presencial trimestral, que fora do ABC vira um dia seu na Marikota.</p></details>
+    <details><summary>O Leandro mostra os números da Marikota?</summary><p>Mostra a conta: ficha técnica, CMV, rodízio e margem por canal, com exemplos reais. O que não for público da Marikota é apresentado com valores de referência.</p></details>
+    <details><summary>Como funciona a mentoria privada?</summary><p>Diagnóstico, um dia na operação, plano de 90 dias e acompanhamento com 4 chamadas por mês. 10 vagas por vez, contrato mínimo de 3 meses. Valores são apresentados na conversa.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><b style="color:var(--text)">Donos de Pizzaria</b> · por Leandro Belini, fundador da Marikota Pizzaria</div>
+    <div>Produção WEN Produtora · Rua Haddock Lobo, 1307, São Paulo</div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5511999999999?text=Oi%2C%20vim%20pelo%20site%20Donos%20de%20Pizzaria" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.3 8.7 3.3 15.7c0 2.5.7 4.9 2 7L3 29l6.5-2.1c2 1.1 4.2 1.6 6.5 1.6 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-2 0-3.9-.5-5.6-1.6l-.4-.2-3.9 1.2 1.3-3.7-.3-.4a10.3 10.3 0 0 1-1.6-5.6C5.5 10 10.2 5.3 16 5.3s10.5 4.7 10.5 10.4S21.8 26.2 16 26.2zm5.8-7.8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2s-.8 1-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.4 3.6 5.8 5.1 2.9 1.2 3.5 1 4.1.9.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+<script>
+  function enviar(e){
+    e.preventDefault();
+    // Modelo: o envio real vai para o CRM Donos de Pizzaria (ver 08-crm/spec.md).
+    document.getElementById('ok').style.display='block';
+    e.target.querySelector('button').disabled=true;
+    return false;
+  }
+</script>
+</body>
+</html>
