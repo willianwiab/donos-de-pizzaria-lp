@@ -38,6 +38,23 @@ Página: https://willianwiab.github.io/donos-de-pizzaria-lp/
 
 Para atualizar: editar `index.html`, depois `git add -A && git commit -m "..." && git push`. O Pages republica em 1 a 2 minutos. Nunca colocar neste repositório nada das outras pastas do projeto (números, contrato, cartas de negociação): ele é público.
 
+## Domínio: donosdepizzaria.com.br
+
+Decisão de 2026-10-07. O repositório já tem o arquivo `CNAME` e o GitHub Pages já está configurado para o domínio. Falta só o registro e o DNS.
+
+1. Registrar `donosdepizzaria.com.br` no Registro.br, **no CPF ou CNPJ do Leandro** (titular). Will como contato técnico. Registrar também o `.com`, se quiser proteger.
+2. No painel do Registro.br, em "Editar zona DNS", criar:
+   - `A` (raiz, sem nome) → `185.199.108.153`
+   - `A` (raiz) → `185.199.109.153`
+   - `A` (raiz) → `185.199.110.153`
+   - `A` (raiz) → `185.199.111.153`
+   - `CNAME` `www` → `willianwiab.github.io`
+3. Esperar a propagação (minutos a algumas horas). O Pages detecta o domínio e emite o certificado.
+4. No GitHub, em Settings → Pages, marcar "Enforce HTTPS" quando o certificado aparecer (ou `gh api -X PUT repos/willianwiab/donos-de-pizzaria-lp/pages -F https_enforced=true`).
+5. Conferir `https://donosdepizzaria.com.br` e `https://www.donosdepizzaria.com.br`.
+
+Enquanto o DNS não aponta, a página continua em https://willianwiab.github.io/donos-de-pizzaria-lp/.
+
 ## Publicar
 
 Quando aprovada: Vercel, projeto novo na conta do projeto (não na da WEN), domínio em nome do Leandro, UTM nas campanhas, formulário apontando para o CRM.
