@@ -40,7 +40,7 @@ Para atualizar: editar `index.html`, depois `git add -A && git commit -m "..." &
 
 ## Domínio: donosdepizzaria.com.br
 
-Decisão de 2026-10-07. O repositório já tem o arquivo `CNAME` e o GitHub Pages já está configurado para o domínio. Falta só o registro e o DNS.
+Registrado em 2026-10-07 (titular Leandro, Will contato admin/técnico). DNS apontado em 2026-10-08 na zona do Registro.br (modo avançado), certificado emitido e HTTPS obrigatório ligado no GitHub Pages. **No ar em https://donosdepizzaria.com.br**. O passo a passo abaixo fica como registro.
 
 1. Registrar `donosdepizzaria.com.br` no Registro.br, **no CPF ou CNPJ do Leandro** (titular). Will como contato técnico. Registrar também o `.com`, se quiser proteger.
 2. No painel do Registro.br, em "Editar zona DNS", criar:
@@ -53,7 +53,7 @@ Decisão de 2026-10-07. O repositório já tem o arquivo `CNAME` e o GitHub Page
 4. No GitHub, em Settings → Pages, marcar "Enforce HTTPS" quando o certificado aparecer (ou `gh api -X PUT repos/willianwiab/donos-de-pizzaria-lp/pages -F https_enforced=true`).
 5. Conferir `https://donosdepizzaria.com.br` e `https://www.donosdepizzaria.com.br`.
 
-Enquanto o DNS não aponta, a página continua em https://willianwiab.github.io/donos-de-pizzaria-lp/.
+O endereço antigo https://willianwiab.github.io/donos-de-pizzaria-lp/ agora redireciona para o domínio.
 
 ## Publicar
 
